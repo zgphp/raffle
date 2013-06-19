@@ -10,6 +10,7 @@ if (!defined("API_KEY")) die("API_KEY not defined in settings.php.");
 
 $eventID = EVENT_ID;
 $key = "key=" . API_KEY;
+$gaAccount = defined("GA_ACCOUNT") ? GA_ACCOUNT : null;
 
 // Create a stream to define character encoding
 $opts = array('http' => array('header' => 'Accept-Charset: utf-8'));
@@ -64,5 +65,20 @@ $rsvps = json_decode($rsvpsJSON);
         <button class="btn" id="draw_button">Izvuci dobitnika</button>
     </div>
 </div>
+
+<?php if (!empty($gaAccount)) { ?>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '<?= $gaAccount ?>']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<?php } ?>
+
 </body>
 </html>
