@@ -1,0 +1,9 @@
+.wrapper { margin: 0 30px}
+.attendee { float: left; width: 200px; height: 80px; text-align: center; padding: 10px }
+.attendee.highlight { color: #fff; background: #e36b23 none }
+.attendee .thumb { float: left }
+.attendee .image { float: left; display: none }
+.small { font-size: smaller }
+.clearboth { clear: both }
+.draw { margin-top: 30px; text-align: center }
+.jumbotron { text-align: center }
