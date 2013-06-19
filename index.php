@@ -34,6 +34,15 @@ $rsvps = json_decode($rsvpsJSON);
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Izvlačenje ZgPHP meetup #22 nagrada| ZgPHP Meetup    </title>    
+    <meta property="fb:admins" content="500311732" />
+	<meta property="fb:app_id" content="572203872790464"/>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Izvlačenje ZgPHP meetup #22 nagrada" />
+	<meta property="og:url" content="http://zgphp.org/raffle/" />
+	<meta property="og:description" content="Meetup se održava u klubu Mama, Preradovićeva 18, u četvrtak 20. lipnja s početkom od 17:30. Dolazak na meetup možete najaviti na meetup.com. Predavanja će održati Valentin Rep, softverski inženjer..." />
+	<meta property="og:site_name" content="ZgPHP Meetup" />
+	<meta property="og:image" content="http://zgphp.org/wp-content/uploads/2013/02/zgphp_meetup_header.png" />	
     <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/superhero/bootstrap.min.css" rel="stylesheet">
     <link href="draw.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
