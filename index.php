@@ -74,6 +74,18 @@ $rsvps = json_decode($rsvpsJSON);
     <div class="draw">
         <button class="btn" id="draw_button">Izvuci dobitnika</button>
     </div>
+
+    <hr />
+
+    <h2>Pravila</h2>
+
+    <ul>
+        <li>Pravo na učestvovanje u nagradnoj igri imaju svi koji su prijavili dolazak na <?= $event->name ?> putem <a href="<?= $event->event_url ?>">meetup.com</a> (RSVP) i prisutni su na meetupu.</li>
+        <li>Svaki sudionik može dobiti samo jednu nagradu, ako se jedna osoba izvuče više puta, izvlačenje će se ponoviti.</li>
+        <li>Sudionici koji su se prijavili više puta neće sudjelovati u nagradnoj igri.</li>
+        <li>Sudionici koji su prijavili dolazak nakon početka meetupa (18:00) neće sudjelovati u nagradnoj igri.</li>
+        <li>Organizatori ne sudjeluju u nagradnoj igri.</li>
+    </ul>
 </div>
 
 <?php if (!empty($gaAccount)) { ?>
