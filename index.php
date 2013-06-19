@@ -86,6 +86,11 @@ $rsvps = json_decode($rsvpsJSON);
         <li>Sudionici koji su prijavili dolazak nakon početka meetupa (18:00) neće sudjelovati u nagradnoj igri.</li>
         <li>Organizatori ne sudjeluju u nagradnoj igri.</li>
     </ul>
+
+    <h2>Izvorni kod</h2>
+
+    <p>Izvorni kod ove aplikacije dostupan je na <a href="https://github.com/ZgPHP/raffle" target="_blank">Githubu</a>.</p>
+    <p>Ukoliko uočite ikakve nepravilnosti, molimo da nas obavijestite, ili još bolje ispravite ih i pošaljete pull request.</p>
 </div>
 
 <?php if (!empty($gaAccount)) { ?>
