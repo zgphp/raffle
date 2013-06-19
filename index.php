@@ -2,10 +2,13 @@
 
 require __DIR__ . '/settings.php';
 
+// Read settings
 $eventID = defined("EVENT_ID") ? EVENT_ID : null;
 $apiKey = defined("API_KEY") ? API_KEY : null;
 $gaAccount = defined("GA_ACCOUNT") ? GA_ACCOUNT : null;
+$ignoreIDs = defined("IGNORE_MEMBERS") ? explode(',', IGNORE_MEMBERS) : array();
 
+// Check settings
 if (empty($eventID)) die("EVENT_ID not defined in settings.php.");
 if (empty($apiKey)) die("API_KEY not defined in settings.php.");
 
@@ -31,7 +34,7 @@ $rsvps = json_decode($rsvpsJSON);
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Izvlačenje ZgPHP meetup #22 nagrada| ZgPHP Meetup    </title>    
+    <title>Izvlačenje ZgPHP meetup #22 nagrada| ZgPHP Meetup    </title>
     <meta property="fb:admins" content="500311732" />
     <meta property="fb:app_id" content="572203872790464"/>
     <meta property="og:type" content="article" />
@@ -39,7 +42,7 @@ $rsvps = json_decode($rsvpsJSON);
     <meta property="og:url" content="http://zgphp.org/raffle/" />
     <meta property="og:description" content="Meetup se održava u klubu Mama, Preradovićeva 18, u četvrtak 20. lipnja s početkom od 17:30. Dolazak na meetup možete najaviti na meetup.com. Predavanja će održati Valentin Rep, softverski inženjer..." />
     <meta property="og:site_name" content="ZgPHP Meetup" />
-    <meta property="og:image" content="http://zgphp.org/wp-content/uploads/2013/02/zgphp_meetup_header.png" />	
+    <meta property="og:image" content="http://zgphp.org/wp-content/uploads/2013/02/zgphp_meetup_header.png" />
     <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/superhero/bootstrap.min.css" rel="stylesheet">
     <link href="draw.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
@@ -55,9 +58,11 @@ $rsvps = json_decode($rsvpsJSON);
 
     <div class="attendees">
     <?php foreach ($rsvps->results as $attendee) { ?>
-        <?php // Filter out organisers
-            if ($attendee->member->name == 'Ivan Habunek') continue;
-            if ($attendee->member->name == 'Miro Svrtan') continue;
+        <?php
+            // Filter out organisers
+            if (in_array($attendee->member->member_id, $ignoreIDs)) {
+                continue;
+            }
         ?>
         <div class="attendee">
             <img class="thumb" src="<?= $attendee->member_photo->thumb_link ?>" alt="<?= $attendee->member->name ?>" />
