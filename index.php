@@ -1,8 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 require __DIR__ . '/settings.php';
 
 $eventID = defined("EVENT_ID") ? EVENT_ID : null;
