@@ -1,6 +1,6 @@
 <?php
 
-// ini_set('display_errors', 0);
+ini_set('display_errors', 0);
 
 $event = unserialize(file_get_contents('var/event.dat'));
 $rsvps = unserialize(file_get_contents('var/rsvps.dat'));
@@ -48,12 +48,12 @@ if (empty($rsvps)) die("Unable to load rsvps data.");
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Pobjednik izvlačenja je:</h3>
+                <h3><?= $attendee->member->name ?></h3>
                 <?php if (isset($attendee->member_photo->photo_link)) { ?>
                 <img class="photo" src="<?= $attendee->member_photo->photo_link ?>" alt="<?= $attendee->member->name ?>" />
                 <?php } else { ?>
                 <img class="photo" src="http://placehold.it/300x300?text=<?= urlencode("?") ?>" alt="<?= $attendee->member->name ?>" />
                 <?php } ?>
-                <h3><?= $attendee->member->name ?></h3>
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn">Zatvori</a>
@@ -76,7 +76,7 @@ if (empty($rsvps)) die("Unable to load rsvps data.");
         <li>Pravo na učestvovanje u nagradnoj igri imaju svi koji su prijavili dolazak na <?= $event->name ?> putem <a href="<?= $event->event_url ?>">meetup.com</a> (RSVP) i prisutni su na meetupu.</li>
         <li>Svaki sudionik može dobiti samo jednu nagradu, ako se jedna osoba izvuče više puta, izvlačenje će se ponoviti.</li>
         <li>Sudionici koji su se prijavili više puta neće sudjelovati u nagradnoj igri.</li>
-        <li>Sudionici koji su prijavili dolazak nakon početka meetupa (18:00) neće sudjelovati u nagradnoj igri.</li>
+        <li>Sudionici koji su prijavili dolazak nakon početka meetupa neće sudjelovati u nagradnoj igri.</li>
         <li>Organizatori ne sudjeluju u nagradnoj igri.</li>
     </ul>
 

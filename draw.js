@@ -29,14 +29,16 @@ function win($attendee) {
     $attendee.remove();
 }
 
+// Draw when draw button is pressed
 $(document).ready(function() {
     $("#draw_button").click(function() {
         draw(20);
     });
 });
 
+// Draw when "i" is pressed
 $(document).keypress(function(e) {
-    if (e.which == 32) {
+    if (e.which == 73 || e.which == 105) {
         draw(iterations);
     }
 });
