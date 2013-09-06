@@ -1,5 +1,4 @@
 var iterations = 20;
-var winners = [];
 
 function random_attendee() {
     var count = $(".attendee").length;
@@ -17,7 +16,9 @@ function draw(count) {
             draw(count - 1)
         }, 100);
     } else {
-        win($attendee);
+        setTimeout(function() {
+            win($attendee)
+        }, 500);
     }
 }
 
@@ -32,7 +33,7 @@ function win($attendee) {
 // Draw when draw button is pressed
 $(document).ready(function() {
     $("#draw_button").click(function() {
-        draw(20);
+        draw(iterations);
     });
 });
 

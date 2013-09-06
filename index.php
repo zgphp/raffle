@@ -45,15 +45,19 @@ if (empty($rsvps)) die("Unable to load rsvps data.");
         </div>
 
         <div class="modal hide fade" id="win-<?= $attendee->rsvp_id ?>">
-            <div class="modal-body">
+            <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>Pobjednik izvlačenja je:</h3>
+                <h3>Pobjednik izvlačenja</h3>
+            </div>
+            <div class="modal-body">
                 <h3><?= $attendee->member->name ?></h3>
+                <div class="photo">
                 <?php if (isset($attendee->member_photo->photo_link)) { ?>
-                <img class="photo" src="<?= $attendee->member_photo->photo_link ?>" alt="<?= $attendee->member->name ?>" />
+                    <img class="photo" src="<?= $attendee->member_photo->photo_link ?>" alt="<?= $attendee->member->name ?>" />
                 <?php } else { ?>
-                <img class="photo" src="http://placehold.it/300x300?text=<?= urlencode("?") ?>" alt="<?= $attendee->member->name ?>" />
+                    <img class="photo" src="http://placehold.it/300x300?text=<?= urlencode("?") ?>" alt="<?= $attendee->member->name ?>" />
                 <?php } ?>
+                </div>
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn">Zatvori</a>

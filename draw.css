@@ -3,7 +3,8 @@
 .clearboth { clear: both }
 .draw { margin-top: 30px; text-align: center }
 .jumbotron { text-align: center }
-.modal-body { text-align: center }
+.modal-body { text-align: center; overflow: hidden }
+.modal-header { text-align: center }
 .small { font-size: smaller }
 .winner { display: none;}
 .wrapper { margin: 0 30px}
