@@ -73,8 +73,8 @@ if (empty($rsvps)) die("Unable to load rsvps data.");
     <h2>Pravila</h2>
 
     <ul>
-        <li>Pravo na učestvovanje u nagradnoj igri imaju svi koji su prijavili dolazak na <?= $event->name ?> putem <a href="<?= $event->event_url ?>">meetup.com</a> (RSVP) i prisutni su na meetupu.</li>
-        <li>Svaki sudionik može dobiti samo jednu nagradu, ako se jedna osoba izvuče više puta, izvlačenje će se ponoviti.</li>
+        <li>Pravo na učestvovanje u nagradnoj igri imaju svi koji su prijavili dolazak na <?= $event->name ?> putem <a href="<?= $event->event_url ?>">meetup.com</a> (RSVP) koristeći svoje puno ime i prezime i prisutni su na meetupu.</li>
+        <li>Svaki sudionik može dobiti samo jednu nagradu.</li>
         <li>Sudionici koji su se prijavili više puta neće sudjelovati u nagradnoj igri.</li>
         <li>Sudionici koji su prijavili dolazak nakon početka meetupa neće sudjelovati u nagradnoj igri.</li>
         <li>Organizatori ne sudjeluju u nagradnoj igri.</li>
