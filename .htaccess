@@ -1,0 +1,4 @@
+<Files ~ "(load|settings).php>
+    Order allow,deny
+    Deny from all
+</Files>
